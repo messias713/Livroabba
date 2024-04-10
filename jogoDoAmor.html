@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo do amor!</title>
+
+    <style>
+
+        body {
+
+            background-image: url('https://i.pinimg.com/474x/48/7d/e1/487de12991ab170b40b64f5ae1817d5d.jpg');
+
+            background-size: cover;
+
+            text-align: center;
+
+            color: #FF0000;
+
+            font-size: 24px;
+
+        }
+
+    </style>
+
+</head>
+
+<center><h1 style="color:#8A2BE2;">Jogo do amor!Divirta-se.</h1></center>
+
+<body>
+
+    <div id="texto">O amor é lindo!<br><img src="https://3.bp.blogspot.com/-OtPuDXBAfUI/VEml_HBNEdI/AAAAAAACB_A/7YjArtltcd0/s1600/el%2Bamor.gif"width="20%"weight="10%"></div>
+
+
+    <button onclick="moveDown()">Baixo</button>
+
+    <button onclick="moveUp()">Cima</button>
+
+    <button onclick="moveRight()">Direita</button>
+
+    <button onclick="moveLeft()">Esquerda</button>
+
+
+    <script>
+
+        function moveDown() {
+
+            var texto = document.getElementById('texto');
+
+            texto.style.marginTop = '150px';
+
+        }
+
+
+        function moveUp() {
+
+            var texto = document.getElementById('texto');
+
+            texto.style.marginTop = '-10px';
+
+        }
+
+
+        function moveRight() {
+
+            var texto = document.getElementById('texto');
+
+            texto.style.marginLeft = '150px';
+
+        }
+
+
+        function moveLeft() {
+
+            var texto = document.getElementById('texto');
+
+            texto.style.marginLeft = '-150px';
+
+        }
+
+    </script>
+
+</body>
+
+
+</html>
