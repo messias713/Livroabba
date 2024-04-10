@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Jogo de Incentivo Emocional</title>
+
+    <style>
+
+        #verse {
+
+            font-size: 24px;
+
+            text-align: center;
+
+            margin: 50px;
+
+        }
+
+        #button {
+
+            font-size: 18px;
+
+            padding: 10px 20px;
+
+            margin: 20px;
+
+            background-color: #4CAF50;
+
+            color: white;
+
+            border: none;
+
+            cursor: pointer;
+
+        }
+
+        pre{
+
+        color:blue;
+
+        }
+
+        .blink {
+
+  animation: blink 1s steps(1, end) infinite;
+
+}
+
+
+@keyframes blink {
+
+  0% {
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    opacity: 0;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+    </style>
+
+    <pre>
+
+    AQUI CRIEI UM JOGO SIMPLES;
+
+    Cada vez que você clica no botão;
+
+    Gera uma frase emocional;
+
+    E com um pouco de java script;
+
+    Criamos uma borda na imagem;
+
+    </pre>
+
+</head>
+
+<body>
+
+    <h1>Jogo de Incentivo Emocional</h1>
+
+    <p>Clique no botão para gerar um verso ou frase de incentivo emocional:</p>
+
+    <button id="button" onclick="generateVerse()">Gerar</button>
+
+    <p id="verse"></p>
+
+
+    <img src="https://i.gifer.com/embedded/download/WPq6.gif" alt="flower" width="150" height="120">
+
+<img src="https://i.gifer.com/embedded/download/OE6M.gif" alt="flower" width="150" height="120">
+
+    
+
+    <script>
+
+        // Array de versos e frases de incentivo emocional
+
+        var verses = [
+
+            "Você é mais forte do que pensa.",
+
+            "Acredite em si mesmo, você é capaz.",
+
+            "Sua jornada importa, não desista.",
+
+            "Lembrar-se de como você superou desafios no passado pode lhe dar força para enfrentar os desafios que você está enfrentando agora.",
+
+            "Você é único e especial, valorize-se.",
+
+            "A felicidade está no caminho, não no destino.",
+
+            "A vida é cheia de altos e baixos, aproveite os altos e aprenda com os baixos.",
+
+            "Você tem o poder de transformar sua vida.",
+
+            "Acredite no seu potencial, você pode conquistar qualquer coisa.",
+
+            "Você merece todo o amor e alegria que o mundo tem a oferecer."
+
+        ];
+
+
+        // Função para gerar um verso ou frase aleatoriamente
+
+        function generateVerse() {
+
+            var index = Math.floor(Math.random() * verses.length); // Gera um índice aleatório
+
+            var verseElement = document.getElementById("verse");
+
+            verseElement.innerHTML = verses[index]; // Exibe o verso ou frase no elemento p com id "verse"
+
+        }
+
+        const img = document.images[0];
+
+img.style.border = "20px solid blue";
+
+
+
+    </script>
+
+    <p id="demo"></p>
+
+    <p>
+
+  <span class="blink">Feliz 2024<br>seja feliz por favor;</span>-182
+
+</p>
+
+</body>
+
+</html>
