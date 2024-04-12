@@ -1,0 +1,22 @@
+
+<h1 style="color:purple;">CLIQUE na MARIA! A MARIA vai dançar para você!</h1>
+<script>
+let texto = document.createElement('p');
+texto.textContent = 'MARIA';
+document.body.appendChild(texto);
+let imagem = document.createElement('img');
+imagem.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3eolmJIear0cHefvRdUqHyy7sAlvv24qmROBwiOvV4c4K7PgTJAlS1Q7_R7gjodzbgdIk3dXi4-Wq2K07gvslnnDEeTACJsvyWi7c3LVbmTJXTnuiOLV_U0PBCbvF9hTRSv4FPp52PkluMBrxSnIA8L62XSaOVsl1332aIrQyR8XAg_cC2m5pDtm2T5a-/s320/iMaria1.webp';
+imagem.style.width = '200px'; 
+document.body.appendChild(imagem);
+
+imagem.addEventListener('click', () => {
+    let intervalo = setInterval(() => {
+        let posX = Math.floor(Math.random() * window.innerWidth); 
+        let posY = Math.floor(Math.random() * window.innerHeight); 
+        
+        imagem.style.position = 'absolute';
+        imagem.style.left = posX + 'px';
+        imagem.style.top = posY + 'px';
+    }, 100); // Define a velocidade da dança (100 milissegundos)
+});
+</script>
