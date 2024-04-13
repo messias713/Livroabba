@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<center>
+<head>
+    <title>Desafio Fada</title>
+</head>
+<style>
+    #anjo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+<body>
+
+<img src="https://giffiles.alphacoders.com/324/32455.gif" alt="Fada">
+<img id="anjo" src="https://i.pinimg.com/originals/e4/ef/98/e4ef9831339059df1eed867a9055c2a3.gif">
+<script>
+    let verso1 = "Fada das asas brilhantes, traga a luz para os corações carentes";
+    let verso2 = "Com sua magia repleta de amor, encante os sonhos com seu esplendor";
+    let verso3 = "Guia dos pequenos, protetora das flores, fada querida, encha nossos dias de cores";
+
+    document.write(`<p>${verso1}</p>`);
+    document.write(`<p>${verso2}</p>`);
+    document.write(`<p>${verso3}</p>`);
+     const anjo = document.getElementById('anjo');
+  let positionX = 0;
+  let positionY = 0;
+
+  function fly() {
+    positionX += 5;
+    positionY += 5;
+    anjo.style.left = positionX + 'px';
+    anjo.style.top = positionY + 'px';
+
+    if (positionX > window.innerWidth || positionY > window.innerHeight) {
+      positionX = 0;
+      positionY = 0;
+    }
+
+    requestAnimationFrame(fly);
+  }
+
+  fly();
+</script>
+<h1 style="color:orange;">Espiritual letras e fadas!</h1>
+</body>
+</center>
+</html>
