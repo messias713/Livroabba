@@ -1,0 +1,134 @@
+<html>
+<meta charset="utf-8">
+<style>
+pre{
+color:blue;
+}
+</style>
+<pre>
+<strong>Tags html magicas</strong>
+</pre>
+<div>
+<h1>tag meter</h1>
+<label for="meter">meter</label>
+<meter id="meter"min="0"max="100"value="70"></meter>
+</div>
+<div>
+<h1>tag progress</h1>
+<label for="progress">progress</label>
+<progress id="progress"min="0"max="100"value="90"></progress>
+</div>
+<div>
+<h1>tag datalist</h1>
+<label for="browser">escreva suas palavras favoritas</label>
+<input list="browsers"name="browser"id="browser">
+<datalist id="browsers">
+<option value="magia">
+<option value="Deus">
+<option value="Jesus">
+<option value="Maria">
+<option value="universo">
+<option value="Anjos">
+</datalist>
+</div>
+<div>
+<h1>tag sub</h1>
+<p>beba sumo<sub>23</sub>3</p>
+</div>
+<div>
+<h1>tag abbr</h1>
+<p>Os <abbr title="Livros mcegonha">livros</abbr>Foram fundados em 2010.</p>
+</div>
+<div>
+<h1>tag details e sumary.<br>Tags para programar html total.<br>Esta tag esconde o html e programa html.</h1>
+<details>
+<summary>olá tudo ok</summary>
+<img src="https://media.tenor.com/AsBXL3IygdYAAAAC/heavenly-light.gif"width="50%"height="30%">
+
+</details>
+</div>
+<div>
+<h1>Código html mágico</h1>
+<a href="https://trinket.io/html/bb9b14ead9">HTML MAGICO</a><br>
+<a href="https://manysoft.com.br/wp-content/uploads/2019/04/Tags_para_HTML5.pdf">LISTA DE TAGS HTML COMPLETA</a><br>
+<a href="https://docente.ifsc.edu.br/vilson.junior/pi/04_Introducao_JavaScript.pdf">ADICIONANDO JS AO HTML</a>
+</div>
+
+ 
+ 
+</body>
+</html>
+-----------------------------------------------------------------
+<pre>
+<strong>JUNTAR JS AO HTML CRIANDO ANIME</strong>
+<pre>
+--------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barra de Progresso</title>
+</head>
+<body>
+  <h1>Tag progress</h1>
+  <label for="progress">Progresso</label>
+  <progress id="progress" min="0" max="100" value="0"></progress>
+
+  <script>
+    // Função para fazer a barra de progresso progredir
+    function incrementarProgresso() {
+      let progressBar = document.getElementById('progress');
+      let valorAtual = progressBar.value;
+
+      // Aumentar o valor atual da barra de progresso em 10
+      if (valorAtual < progressBar.max) {
+        progressBar.value = parseInt(valorAtual) + 10;
+      }
+    }
+
+    // Chamando a função após um intervalo de tempo usando setTimeout
+    setTimeout(incrementarProgresso, 1000); // Chamando a função após 1 segundo (1000 milissegundos)
+  </script>
+
+</body>
+</html>
+---------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Piscar Datalist</title>
+ <style>
+ #browserBlink {
+ animation: piscar 1s infinite;
+ }
+ @keyframes piscar {
+ 0% { opacity: 1.0; }
+ 50% { opacity: 0.5; }
+ 100% { opacity: 1.0; }
+ }
+ </style>
+</head>
+<body>
+ <h1>Tag datalist</h1>
+ <label for="browser">Escreva suas palavras favoritas:</label>
+ <input list="browsers" name="browser" id="browserBlink">
+ <datalist id="browsers">
+ <option value="magia">
+ <option value="Deus">
+ <option value="Jesus">
+ <option value="Maria">
+ <option value="universo">
+ <option value="Anjos">
+ </datalist>
+
+<script>
+ function piscarInput() {
+ let inputField = document.getElementById('browserBlink');
+ inputField.style.animation = 'piscar 1s infinite'; // Aplicando a animação de piscar
+ }
+ // Chama a função para iniciar o piscar da caixa de seleção
+ piscarInput();
+ </script>
+
+</body>
+</html>
+
