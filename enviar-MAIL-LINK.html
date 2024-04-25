@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Divulgar o meu site no mundo.</title>
+</head>
+<body>
+ <h1>Divulgar o meu site no mundo.</h1>
+ <div>
+ <h2>Link do meu site.</h2>
+ <a href="https://livrosaartedoespirito.blogspot.com/">Divulgar o meu site</a>
+ </div>
+
+<script>
+ function enviarPorEmail() {
+ let assunto = "Confira este site incrível!";
+ let corpo = "Olá! Acabei de descobrir este site incrível e queria compartilhar com você: https://livrosaartedoespirito.blogspot.com/";
+ window.location.href = "mailto:contato@presidencia.gob.sv?subject=" + assunto + "&body=" + corpo;
+ }
+</script>
+
+<button onclick="enviarPorEmail()">Enviar por E-mail</button>
+
+</body>
+</html>
+
