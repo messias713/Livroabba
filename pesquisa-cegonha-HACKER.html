@@ -1,0 +1,28 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa Universal</title>
+</head>
+<body>
+<h1>Pesquisa Universal na Internet</h1>
+<input type="text" id="searchInput" placeholder="Digite sua pesquisa aqui">
+<button onclick="searchWeb()">Pesquisar</button>
+
+<script>
+function searchWeb() {
+  const input = document.getElementById('searchInput').value;
+  const searchUrl = "www.google.es?q=" + input; // Substitua o link com o site de busca desejado
+
+  // Abrir a URL da pesquisa em uma nova aba
+  window.open(searchUrl, "_blank");
+}
+</script>
+
+</body>
+</html>
+
