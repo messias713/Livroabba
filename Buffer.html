@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffer em JavaScript</title>
+</head>
+<h1>Buffer Js html 16 bytes.</h1>
+<body>
+    <input type="text" id="searchInput" placeholder="Digite um valor para pesquisar">
+    <button onclick="searchBinary()">Pesquisar</button>
+    <button onclick="increaseBuffer()">Aumentar Buffer para 32 bytes</button>
+    <button onclick="multiplyValues(2)">Multiplicar por 2</button>
+    <button onclick="divideValues(2)">Dividir por 2</button>
+
+    <script>
+        // Criando um ArrayBuffer de 16 bytes
+        let buffer = new ArrayBuffer(16);
+
+        // Acessando a visualização do buffer como um array de inteiros de 8 bits sem sinal
+        let uint8Array = new Uint8Array(buffer);
+
+        // Preenchendo o buffer com alguns valores
+        for (let i = 0; i < uint8Array.length; i++) {
+            uint8Array[i] = i * 2;
+        }
+
+        // Função para realizar a pesquisa binária
+        function searchBinary() {
+            const searchValue = parseInt(document.getElementById('searchInput').value);
+            let low = 0;
+            let high = uint8Array.length - 1;
+            let mid;
+
+            while (low <= high) {
+                mid = Math.floor((low + high) / 2);
+                if (uint8Array[mid] === searchValue) {
+                    console.log(`Valor ${searchValue} encontrado na posição ${mid}.`);
+                    return;
+                } else if (uint8Array[mid] < searchValue) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+
+            console.log(`Valor ${searchValue} não encontrado.`);
+        }
+
+        // Função para aumentar o buffer para 32 bytes
+        function increaseBuffer() {
+            buffer = new ArrayBuffer(32);
+            uint8Array = new Uint8Array(buffer);
+
+            // Preenchendo o novo buffer com alguns valores
+            for (let i = 0; i < uint8Array.length; i++) {
+                uint8Array[i] = i * 2;
+            }
+
+            console.log('Buffer aumentado para 32 bytes.');
+        }
+
+        // Função para multiplicar os valores do buffer por um fator
+        function multiplyValues(factor) {
+            for (let i = 0; i < uint8Array.length; i++) {
+                uint8Array[i] *= factor;
+            }
+
+            console.log(`Valores multiplicados por ${factor}.`);
+            setInterval(multiplyValues, 1000); // Chama a função moveFlowers a cada 100 milissegundos (0.1 segundo)
+        }
+
+        // Função para dividir os valores do buffer por um fator
+        function divideValues(factor) {
+            for (let i = 0; i < uint8Array.length; i++) {
+                uint8Array[i] /= factor;
+            }
+
+            console.log(`Valores divididos por ${factor}.`);
+            
+        }
+    </script>
+</body>
+</html>
+
+
