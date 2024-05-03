@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+<div id="output"></div>
+
+<script>
+
+function print(message){
+
+  document.getElementById('output').innerHTML += message + '<br>';
+
+}
+
+
+
+print('A maria é de albufeira.');
+
+print('A maria é linda.');
+
+print('<h1>Eu sou a maria</h1><img src="https://media.tenor.com/41CGyoJMRXwAAAAC/linda-menina.gif" width="100%" height="40%">');
+
+print('Tenho 30 anos.');
+
+print('Gosto de mar.');
+
+print('Fazer contas matemáticas.');
+
+print('Deu este total mágico: ' + (23 + 23 * 57));
+
+</script>
+
+</body>
+
+</html>
+
+
+---------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="output"></div>
+<script>
+function print(message){
+  document.getElementById('output').innerHTML += message + '<br>';
+}
+
+// Criando um objeto
+var pessoa = {
+  nome: 'Maria',
+  idade: 30,
+  cidade: 'Albufeira'
+};
+
+print('Objeto Pessoa:');
+print('Nome: ' + pessoa.nome);
+print('Idade: ' + pessoa.idade);
+print('Cidade: ' + pessoa.cidade);
+
+// Criando um array
+var frutas = ['Maçã', 'Banana', 'Laranja', 'Morango'];
+
+print('<br>Array de Frutas:');
+for (var i = 0; i < frutas.length; i++) {
+  print(frutas[i]);
+}
+</script>
+</body>
+</html>
+--------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+ body {
+ overflow: hidden;
+ }
+ .flower {
+ position: absolute;
+ }
+</style>
+</head>
+<body>
+<div id="output"></div>
+<script>
+function print(message){
+ document.getElementById('output').innerHTML += message + '<br>';
+}
+
+// Função para criar uma flor
+function createFlower() {
+ var flower = document.createElement('div');
+ flower.className = 'flower';
+ flower.innerHTML = '<img src="https://media.tenor.com/afuyoXnVJRcAAAAC/fairy-tree.gif" width="50" height="50">';
+ 
+ // Adiciona a flor à página
+ document.body.appendChild(flower);
+ 
+ // Define a posição aleatória da flor
+ flower.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+ flower.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+ 
+ // Define um tempo de vida aleatório para a flor
+ var lifeTime = Math.random() * 10000 + 5000; // 5 a 15 segundos
+ 
+ // Remove a flor após o tempo de vida expirar
+ setTimeout(function() {
+ document.body.removeChild(flower);
+ }, lifeTime);
+}
+
+// Cria uma nova flor a cada 2 segundos
+setInterval(createFlower, 2000);
+</script>
+</body>
+</html>
+
+
