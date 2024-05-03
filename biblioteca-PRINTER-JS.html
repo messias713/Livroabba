@@ -1,0 +1,66 @@
+ 
+<h2> Biblioteca printer</h2>
+ 
+ 
+ 
+ <!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+<div id="output"></div>
+
+<script>
+
+function print(message){
+
+  document.getElementById('output').innerHTML += message + '<br>';
+
+}
+
+
+
+print('A maria é de albufeira.');
+
+print('A maria é linda.');
+
+print('<h1>Eu sou a maria</h1><img src="https://media.tenor.com/41CGyoJMRXwAAAAC/linda-menina.gif" width="100%" height="40%">');
+
+print('Tenho 30 anos.');
+
+print('Gosto de mar.');
+
+print('Fazer contas matemáticas.');
+
+print('Deu este total mágico: ' + (23 + 23 * 57));
+//Aqui fica a biblioteca printer
+var printer = {
+  outputElement: document.getElementById('output'),
+  
+  print: function(message) {
+    this.outputElement.innerHTML += message + '<br>';
+  }
+};
+
+// Exemplo de uso da biblioteca
+printer.print('A maria é de albufeira.');
+printer.print('A maria é linda.');
+printer.print('<h1>Eu sou a maria</h1><img src="https://media.tenor.com/41CGyoJMRXwAAAAC/linda-menina.gif" width="100%" height="40%">');
+printer.print('Tenho 30 anos.');
+printer.print('Gosto de mar.');
+printer.print('Fazer contas matemáticas.');
+printer.print('Deu este total mágico: ' + (23 + 23 * 57));
+</script>
+
+</body>
+
+</html>
+
+
