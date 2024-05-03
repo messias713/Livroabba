@@ -1,0 +1,68 @@
+ 
+ 
+ <!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<style>
+h1{
+ color:pink;
+}
+</style>
+</head>
+
+<body>
+
+<div id="output"></div>
+
+<script>
+
+
+//Aqui fica a biblioteca printer
+var printer = {
+  outputElement: document.getElementById('output'),
+  
+  print: function(message) {
+    this.outputElement.innerHTML += message + '<br>';
+  }
+};
+
+// Exemplo de uso da biblioteca
+printer.print('A maria é de albufeira.');
+printer.print('A maria é linda.');
+printer.print('<h1>Eu sou a maria</h1><img src="https://media.tenor.com/41CGyoJMRXwAAAAC/linda-menina.gif" width="100%" height="40%">');
+printer.print('Tenho 30 anos.');
+printer.print('Gosto de mar.');
+printer.print('Fazer contas matemáticas.');
+printer.print('Deu este total mágico: ' + (23 + 23 * 57));
+printer.print('Vamos fazer contas');
+printer.print(1*2*3*4*5*5*7*8*9*10, 'Esta é fácil');
+printer.print('<h1>Eu sou a filha da maria.<br><img src="https://media.tenor.com/khGYK96XPBUAAAAC/happy-mothers-day-mothers-day.gif"width=""><br>Seja feliz por favor.</h1>');
+printer.print('Aqui criamos a biblioteca printer.');
+printer.print('Espero que tenha ajudado a simplificar o javascript no estilo python3.');
+</script>
+
+</body>
+
+</html>
+--------------------------------------
+var printer = {
+  outputElement: document.getElementById('output'),
+  
+  print: function(message) {
+    this.outputElement.innerHTML += message + '<br>';
+  },
+  
+  clear: function() {
+    this.outputElement.innerHTML = '';
+  }
+};
+
+// Exemplo de uso da nova função clear
+printer.clear();
+
+
+
