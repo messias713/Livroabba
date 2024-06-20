@@ -1,0 +1,14 @@
+<htm>
+
+<script>
+function changeSrc() { 
+    document.getElementById('demo').src = "https://www.google.pt/advanced_search?hl=pt-PT&authuser=0"; 
+}
+// Adicionando setInterval para mudar o src automaticamente a cada 10 segundos
+setInterval(changeSrc, 10000); // 10000 milissegundos = 10 segundos
+</script>
+
+<iframe id="demo" src="https://sites.google.com/view/livros-mcegonha-espiritual/p%C3%A1gina-inicial" width="100%" height="300"></iframe>
+<input type="button" onclick="changeSrc()" value="Clique em mim"/>
+
+</htm>
