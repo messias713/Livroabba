@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janela de Exibição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The opener Property</h2>
+
+<p id="demo">Clique no botão para abrir uma nova janela que escreve "HELLO!" na janela de origem.</p>
+
+<textarea id="userText" placeholder="Escreva algo aqui..."></textarea>
+<input type="file" id="imageInput" accept="image/*">
+<input type="file" id="textInput" accept=".txt">
+<input type="file" id="folderInput" webkitdirectory directory multiple>
+<button onclick="openNewWindow()">Abrir Nova Janela</button>
+
+<script>
+function openNewWindow() {
+    const userText = document.getElementById("userText").value.trim();
+    const imageInput = document.getElementById("imageInput").files[0];
+    const textInput = document.getElementById("textInput").files[0];
+    const folderInput = document.getElementById("folderInput").files;
+
+    if (!userText && !imageInput && !textInput && folderInput.length === 0) {
+        alert("Por favor, insira algum texto ou selecione um arquivo.");
+        return;
+    }
+
+    const newWindow = window.open("", "", "width=600,height=600");
+    newWindow.document.write("<p id='displayText'></p>");
+    newWindow.document.write("<img id='displayImage' style='max-width: 100%; height: auto;'>");
+    newWindow.document.write("<pre id='displayTextFile'></pre>");
+    newWindow.document.write("<ul id='displayFolderFiles'></ul>");
+    newWindow.document.write("<button onclick='sendContent()'>Enviar Conteúdo</button>");
+    newWindow.document.write("<script>function sendContent() { " +
+        "window.opener.document.getElementById('demo').innerHTML = document.getElementById('displayText').innerHTML; " +
+        "var imgSrc = document.getElementById('displayImage').src; " +
+        "window.opener.document.getElementById('demo').innerHTML += '<br><img src=\"' + imgSrc + '\" style=\"max-width: 100%; height: auto;\">'; " +
+        "var textContent = document.getElementById('displayTextFile').innerText; " +
+        "window.opener.document.getElementById('demo').innerHTML += '<br>' + textContent; " +
+        "var folderFiles = document.getElementById('displayFolderFiles').innerHTML; " +
+        "window.opener.document.getElementById('demo').innerHTML += '<br>' + folderFiles; " +
+        "window.close(); }<\/script>");
+
+    newWindow.document.write("<script>document.getElementById('displayText').innerHTML = '" + userText + "';<\/script>");
+
+    if (imageInput) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            newWindow.document.getElementById('displayImage').src = e.target.result;
+        };
+        reader.readAsDataURL(imageInput);
+    }
+
+    if (textInput) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            newWindow.document.getElementById('displayTextFile').innerText = e.target.result;
+        };
+        reader.readAsText(textInput);
+    }
+
+    if (folderInput.length > 0) {
+        for (let i = 0; i < folderInput.length; i++) {
+            const li = document.createElement('li');
+            li.textContent = folderInput[i].webkitRelativePath;
+            newWindow.document.getElementById('displayFolderFiles').appendChild(li);
+        }
+    }
+}
+</script>
+
+</body>
+</html>
