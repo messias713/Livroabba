@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Avançada - DuckDuckGo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form, .resultado {
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pesquisa Avançada - DuckDuckGo</h1>
+
+    <form id="formPesquisa">
+        <input type="text" id="consulta" placeholder="Digite seu termo de pesquisa..." required>
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <div id="resultadoPesquisa"></div>
+
+    <script>
+        document.getElementById('formPesquisa').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const termo = document.getElementById('consulta').value;
+            const url = `https://duckduckgo.com/?q=${encodeURIComponent(termo)}&format=json&no_redirect=1`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const resultados = data.RelatedTopics;
+                    let saida = '';
+
+                    resultados.forEach(item => {
+                        if (item.Text) {
+                            saida += `<div class="resultado">
+                                        <p>${item.Text}</p>
+                                        <a href="${item.FirstURL}" target="_blank">Acessar</a>
+                                      </div>`;
+                        }
+                    });
+
+                    document.getElementById('resultadoPesquisa').innerHTML = saida || '<p>Nenhum resultado encontrado.</p>';
+                })
+                .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+</html>
+
